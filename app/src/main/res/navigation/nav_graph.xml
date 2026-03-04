@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.upro.byyum.ui.dashboard.DashboardFragment"
+        android:label="Dashboard" />
+
+    <fragment
+        android:id="@+id/logFragment"
+        android:name="com.upro.byyum.ui.log.LogFragment"
+        android:label="Logs" />
+
+    <fragment
+        android:id="@+id/telegramFragment"
+        android:name="com.upro.byyum.ui.telegram.TelegramFragment"
+        android:label="Telegram" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.upro.byyum.ui.settings.SettingsFragment"
+        android:label="Settings" />
+
+</navigation>
