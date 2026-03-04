@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="80dp">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:columnCount="4"
+                    android:rowCount="1">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/bg_card"
+                        app:cardCornerRadius="14dp"
+                        app:strokeColor="@color/divider"
+                        app:strokeWidth="1dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:gravity="center">
+                            <TextView android:id="@+id/tvTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/text_primary" android:textSize="22sp" android:fontFamily="sans-serif-medium" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total" android:textColor="@color/text_secondary" android:textSize="10sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/bg_card"
+                        app:cardCornerRadius="14dp"
+                        app:strokeColor="@color/status_healthy"
+                        app:strokeWidth="1dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:gravity="center">
+                            <TextView android:id="@+id/tvHealthy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/status_healthy" android:textSize="22sp" android:fontFamily="sans-serif-medium" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Up" android:textColor="@color/text_secondary" android:textSize="10sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/bg_card"
+                        app:cardCornerRadius="14dp"
+                        app:strokeColor="@color/status_down"
+                        app:strokeWidth="1dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:gravity="center">
+                            <TextView android:id="@+id/tvDown" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/status_down" android:textSize="22sp" android:fontFamily="sans-serif-medium" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Down" android:textColor="@color/text_secondary" android:textSize="10sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/bg_card"
+                        app:cardCornerRadius="14dp"
+                        app:strokeColor="@color/status_error"
+                        app:strokeWidth="1dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:gravity="center">
+                            <TextView android:id="@+id/tvError" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/status_error" android:textSize="22sp" android:fontFamily="sans-serif-medium" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Error" android:textColor="@color/text_secondary" android:textSize="10sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </GridLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="MONITORS"
+                    android:textColor="@color/text_hint"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.15"
+                    android:fontFamily="sans-serif-medium" />
+
+                <LinearLayout
+                    android:id="@+id/emptyState"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/ic_empty"
+                        android:alpha="0.4"
+                        android:contentDescription="empty" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="No monitors yet.\nTap + to add your first monitor."
+                        android:textColor="@color/text_hint"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="8dp" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="Add Monitor"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/neon_green"
+        app:tint="@color/bg_primary" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout
