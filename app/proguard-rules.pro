@@ -1,0 +1,5 @@
+-keep class com.upro.byyum.** { *; }
+-keep class androidx.room.** { *; }
+-keepattributes *Annotation*
+-dontwarn okhttp3.**
+-dontwarn okio.**
