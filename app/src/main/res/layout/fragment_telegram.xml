@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingVertical="24dp">
+
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/ic_telegram"
+                android:tint="@color/neon_green"
+                android:contentDescription="Telegram" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Telegram Bot Integration"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="⚠️ Not configured"
+                android:textColor="@color/status_error"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/divider"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BOT CONFIGURATION" android:textColor="@color/text_hint" android:textSize="11sp" android:letterSpacing="0.15" android:layout_marginBottom="12dp" />
+                <TextView android:id="@+id/tvTokenPreview" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/text_secondary" android:textSize="13sp" android:fontFamily="monospace" android:layout_marginBottom="6dp" />
+                <TextView android:id="@+id/tvChatPreview" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/text_secondary" android:textSize="13sp" android:fontFamily="monospace" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/divider"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FEATURES" android:textColor="@color/text_hint" android:textSize="11sp" android:letterSpacing="0.15" android:layout_marginBottom="12dp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="🟢  Immediate alert on DOWN / ERROR" android:textColor="@color/text_primary" android:textSize="13sp" android:layout_marginBottom="8dp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="📊  Summary report every 10 minutes" android:textColor="@color/text_primary" android:textSize="13sp" android:layout_marginBottom="8dp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="⚡  Runs automatically in background" android:textColor="@color/text_primary" android:textSize="13sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConfigureTelegram"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="CONFIGURE TELEGRAM BOT"
+            android:textSize="13sp"
+            android:letterSpacing="0.08"
+            app:backgroundTint="@color/neon_green"
+            android:textColor="@color/bg_primary"
+            android:fontFamily="sans-serif-medium"
+            app:cornerRadius="14dp" />
+
+    </LinearLayout>
+</ScrollView>
